@@ -5,6 +5,7 @@ import HeroSection from './components/pages/LandingPage/HeroSection'
 import StatsSection from './components/pages/LandingPage/StatusSection'
 import TripsGallery from './components/pages/LandingPage/TripsGallery'
 import WhatWeDo from './components/pages/LandingPage/WhatWeDo'
+import WhyChoose from './components/pages/LandingPage/WhyChoose'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <HeroSection />
       <WhatWeDo />
       <TripsGallery />
+      <WhyChoose/>
       {/* <StatsSection /> */}
       <CTABanner />
       <Footer />

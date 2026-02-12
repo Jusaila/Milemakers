@@ -6,30 +6,35 @@ const trips = [
     title: 'Munnar Hills',
     description: 'The beautiful sunrise in the cloud',
     image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=500&q=85',
+    size: 'tall', // 490px height
   },
   {
     id: 2,
     title: 'Beach Paradise',
     description: 'Golden shores and crystal waters',
     image: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=500&q=85',
+    size: 'short', // 112px below = 378px height
   },
   {
     id: 3,
     title: 'Desert Safari',
     description: 'Thrilling adventures in golden dunes',
     image: 'https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=500&q=85',
+    size: 'tall',
   },
   {
     id: 4,
     title: 'Tropical Sunset',
     description: 'Palm trees and vibrant skies',
     image: 'https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?w=500&q=85',
+    size: 'short',
   },
   {
     id: 5,
     title: 'Island Escape',
     description: 'Turquoise waters and serenity',
     image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=500&q=85',
+    size: 'tall',
   },
 ];
 
@@ -38,7 +43,7 @@ const TripsGallery = () => {
 
   const scroll = (direction) => {
     if (scrollRef.current) {
-      const scrollAmount = 350;
+      const scrollAmount = 360;
       scrollRef.current.scrollBy({
         left: direction === 'left' ? -scrollAmount : scrollAmount,
         behavior: 'smooth',
@@ -52,7 +57,7 @@ const TripsGallery = () => {
       style={{ fontFamily: "'DM Sans', sans-serif" }}
     >
       {/* Header */}
-      <div className="text-center mb-4">
+      <div className="text-center mb-12">
         <p className="text-[#888] text-xs tracking-widest uppercase mb-2">
           Trips We Love
         </p>
@@ -69,37 +74,38 @@ const TripsGallery = () => {
       </div>
 
       {/* Cards container */}
-      <div className="relative mt-10">
+      <div className="relative">
         {/* Scrollable row */}
         <div
           ref={scrollRef}
-          className="flex gap-5 overflow-x-auto scrollbar-hide scroll-smooth pb-4"
+          className="flex items-start gap-5 overflow-x-auto scrollbar-hide scroll-smooth pb-4"
           style={{
             scrollbarWidth: 'none',
             msOverflowStyle: 'none',
           }}
         >
-          {trips.map((trip, index) => {
-            // Different heights for visual interest
-            const heights = ['h-[360px]', 'h-[420px]', 'h-[360px]', 'h-[380px]', 'h-[400px]'];
-            const cardHeight = heights[index % heights.length];
+          {trips.map((trip) => {
+            // Alternating heights: tall = 490px, short = 378px (112px less)
+            const cardHeight = 'h-[490px]';
+            const marginTop = trip.size === 'short' ? 'mt-[112px]' : '';
+            
 
             return (
-              <div
+                <div
                 key={trip.id}
-                className={`relative flex-shrink-0 w-[280px] ${cardHeight} rounded-3xl overflow-hidden shadow-md group cursor-pointer`}
+                className={`relative flex-shrink-0 w-[341px] ${cardHeight} ${marginTop} rounded-3xl overflow-hidden shadow-md group cursor-pointer`}
               >
                 {/* Image */}
                 <img
                   src={trip.image}
                   alt={trip.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 {/* Gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
 
-                {/* Text content */}
-                <div className="absolute bottom-0 left-0 right-0 p-5 flex flex-col gap-1">
+                {/* Text content — only visible on hover */}
+                <div className="absolute bottom-0 left-0 right-0 p-5 flex flex-col gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <h3
                     className="text-white text-xl font-bold"
                     style={{ fontFamily: "'Playfair Display', serif" }}
@@ -125,6 +131,8 @@ const TripsGallery = () => {
                     </svg>
                   </button>
                 </div>
+
+               
               </div>
             );
           })}
@@ -143,8 +151,8 @@ const TripsGallery = () => {
           </button>
 
           {/* Progress bar */}
-          <div className="w-48 h-1 bg-[#ddd] rounded-full overflow-hidden">
-            <div className="w-1/3 h-full bg-[#2d4a2d] rounded-full" />
+          <div className="w-72 h-1 bg-[#ddd] rounded-full overflow-hidden">
+            <div className="w-1/3 h-full bg-[#2d4a2d] rounded-full transition-all duration-300" />
           </div>
 
           <button
