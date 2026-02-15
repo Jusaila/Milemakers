@@ -3,37 +3,37 @@ import { useRef } from 'react';
 const trips = [
   {
     id: 1,
-    title: 'Munnar Hills',
-    description: 'The beautiful sunrise in the cloud',
-    image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=500&q=85',
+    title: 'Yallapetty , Munnar',
+    description: 'oct 4, 5 ,2025 ,41 people joined this trip',
+    image: '/images/LandingPage/gallary/1.webp',
     size: 'tall', // 490px height
   },
   {
     id: 2,
-    title: 'Beach Paradise',
-    description: 'Golden shores and crystal waters',
-    image: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=500&q=85',
+    title: '900 kandi - wayanad',
+    description: 'nov 09-10, 23 people joined this trip',
+    image: '/images/LandingPage/gallary/2.webp',
     size: 'short', // 112px below = 378px height
   },
   {
     id: 3,
-    title: 'Desert Safari',
-    description: 'Thrilling adventures in golden dunes',
-    image: 'https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=500&q=85',
+    title: 'CampFire',
+    description: 'from munnar',
+    image: '/images/LandingPage/gallary/5.webp',
     size: 'tall',
   },
   {
     id: 4,
     title: 'Tropical Sunset',
     description: 'Palm trees and vibrant skies',
-    image: 'https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?w=500&q=85',
+    image: '/images/LandingPage/gallary/3.webp',
     size: 'short',
   },
   {
     id: 5,
-    title: 'Island Escape',
-    description: 'Turquoise waters and serenity',
-    image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=500&q=85',
+    title: 'Mamalakandam School,Ernakulam',
+    description: 'Beautiful Goverment school',
+    image: '/images/LandingPage/gallary/8.webp',
     size: 'tall',
   },
 ];
@@ -54,7 +54,8 @@ const TripsGallery = () => {
   return (
     <section
       className="w-full bg-white px-6 md:px-16 py-16 md:py-20"
-      style={{ fontFamily: "'DM Sans', sans-serif" }}
+     style={{ fontFamily: "'Urbanist', sans-serif" }}
+
     >
       {/* Header */}
       <div className="text-center mb-12">
@@ -63,7 +64,8 @@ const TripsGallery = () => {
         </p>
         <h2
           className="text-[#1a1a1a] text-3xl md:text-4xl font-bold leading-snug max-w-xl mx-auto"
-          style={{ fontFamily: "'Playfair Display', serif" }}
+          style={{ fontFamily: "'Urbanist', sans-serif" }}
+
         >
           Ready to make new friends and new memories?
         </h2>
@@ -104,17 +106,15 @@ const TripsGallery = () => {
                 {/* Gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
 
-                {/* Text content — only visible on hover */}
-                <div className="absolute bottom-0 left-0 right-0 p-5 flex flex-col gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <h3
-                    className="text-white text-xl font-bold"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
-                  >
+                {/* Text content */}
+                <div className="absolute bottom-0 left-0 right-0 p-5 flex flex-col gap-1">
+                  <h3 className="text-white text-xl font-bold">
                     {trip.title}
                   </h3>
-                  <p className="text-white/70 text-xs">{trip.description}</p>
+                  <p className="text-white/80 text-xs">
+                    {trip.description}
+                  </p>
 
-                  {/* Arrow icon */}
                   <button className="self-end w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center mt-2 hover:bg-white/30 transition-all">
                     <svg
                       className="w-3.5 h-3.5 text-white"
@@ -130,7 +130,8 @@ const TripsGallery = () => {
                       />
                     </svg>
                   </button>
-                </div>
+                </div>    
+
 
                
               </div>

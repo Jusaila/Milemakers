@@ -1,90 +1,69 @@
-const StatsSection = () => {
-    return (
-      <section
-        className="relative w-full bg-[#f5f2ec] overflow-hidden py-16 px-6 md:px-16"
-        style={{ fontFamily: "'DM Sans', sans-serif" }}
-      >
-        {/* Palm tree image — bottom left, partially cut off */}
-        <div className="absolute -left-6 bottom-0 w-[260px] md:w-[320px] pointer-events-none select-none z-10">
+const StatusSection = () => {
+  return (
+    <section className="relative w-full bg-white overflow-hidden">
+
+      {/* Left decorative rectangle */}
+      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-2 md:w-4 h-[460px] md:h-[760px] bg-[#2d4a2d]" />
+
+      {/* Right decorative rectangle */}
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-2 md:w-4 h-[460px] md:h-[760px] bg-[#2d4a2d]" />
+
+      <div className="flex flex-col md:flex-row">
+
+        {/* LEFT — Image (starts AFTER green bar) */}
+        
+        <div className="w-full md:w-1/2 flex justify-start pl-2 md:pl-4">
+
           <img
-            src="https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=400&q=80"
+            src="/images/LandingPage/status.webp"
             alt="Palm tree"
-            className="w-full h-auto object-contain"
-            style={{ filter: 'saturate(1.1)' }}
+            className="w-[420px] md:w-[520px] lg:w-[990px] h-auto object-contain"
+            style={{ filter: 'saturate(1.15) brightness(1.05)' }}
           />
         </div>
-  
-        {/* Quote block — right side */}
-        <div className="flex justify-end">
-          <div className="max-w-xs md:max-w-sm">
-            {/* Open quote mark */}
-            <span
-              className="text-[#2d4a2d] text-6xl font-serif leading-none block mb-2"
-              style={{ fontFamily: "'Playfair Display', serif", lineHeight: 0.8 }}
-            >
-              "
-            </span>
+
+        {/* RIGHT — Content */}
+    
+        <div className="w-full md:w-1/2 px-6 md:pl-8 md:pr-16 py-16 md:py-0 flex items-center">
+
+          <div className="flex flex-col gap-12 max-w-xl">
+
             <p
-              className="text-[#1a1a1a] text-xl md:text-2xl font-semibold leading-snug"
-              style={{ fontFamily: "'Playfair Display', serif" }}
+              className="text-[#000] text-2xl md:text-[55px] font-semibold leading-snug"
+              style={{ fontFamily: "'Urbanist', sans-serif" }}
+
             >
-              From dream destinations
-              to real experiences, travel
-              transforms ordinary
-              moments into
-              extraordinary stories.
-              <span
-                className="text-[#2d4a2d]"
-                style={{ fontFamily: "'Playfair Display', serif" }}
-              >"</span>
+              “From dream destinations to real experiences, travel transforms
+              ordinary moments into extraordinary stories.”
             </p>
+
+            <div className="flex items-center gap-10 md:gap-16">
+              <div className="flex flex-col items-center gap-2">
+                <span className="text-4xl md:text-5xl font-bold">10+</span>
+                <span className="text-xs uppercase text-[#000000CC]">Group Journeys</span>
+              </div>
+
+              <div className="w-px h-12 bg-[#ccc]" />
+
+              <div className="flex flex-col items-center gap-2">
+                <span className="text-4xl md:text-5xl font-bold">100+</span>
+                <span className="text-xs uppercase text-[#000000CC]">Shared Smiles</span>
+              </div>
+
+              <div className="w-px h-12 bg-[#ccc]" />
+
+              <div className="flex flex-col items-center gap-2">
+                <span className="text-4xl md:text-5xl font-bold">∞</span>
+                <span className="text-xs uppercase text-[#000000CC]">Memories</span>
+              </div>
+            </div>
+
           </div>
         </div>
-  
-        {/* Stats row */}
-        <div className="relative z-20 mt-14 flex items-center justify-center gap-12 md:gap-20 pl-40 md:pl-60">
-          {/* Stat 1 */}
-          <div className="flex flex-col items-center gap-1">
-            <span
-              className="text-3xl font-bold text-[#1a1a1a]"
-              style={{ fontFamily: "'Playfair Display', serif" }}
-            >
-              10 +
-            </span>
-            <span className="text-xs text-[#555] tracking-wide uppercase">
-              Group Journey
-            </span>
-          </div>
-  
-          {/* Divider */}
-          <div className="w-px h-8 bg-[#ccc]" />
-  
-          {/* Stat 2 */}
-          <div className="flex flex-col items-center gap-1">
-            <span
-              className="text-3xl font-bold text-[#1a1a1a]"
-              style={{ fontFamily: "'Playfair Display', serif" }}
-            >
-              100 +
-            </span>
-            <span className="text-xs text-[#555] tracking-wide uppercase">
-              Shared Smiles
-            </span>
-          </div>
-  
-          {/* Divider */}
-          <div className="w-px h-8 bg-[#ccc]" />
-  
-          {/* Stat 3 — infinity icon */}
-          <div className="flex flex-col items-center gap-1">
-            <span className="text-3xl font-bold text-[#1a1a1a]">∞</span>
-            <span className="text-xs text-[#555] tracking-wide uppercase">
-              Memories
-            </span>
-          </div>
-        </div>
-      </section>
-    );
-  };
-  
-  export default StatsSection;
+
+      </div>
+    </section>
+  );
+};
+
+export default StatusSection;
