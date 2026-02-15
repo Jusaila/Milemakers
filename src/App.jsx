@@ -1,5 +1,6 @@
 import Footer from './components/layout/Footer'
 import Navbar from './components/layout/Navbar'
+import CapturedMemories from './components/pages/LandingPage/Capturedmemories'
 import CTABanner from './components/pages/LandingPage/CtaBanner'
 import HeroSection from './components/pages/LandingPage/HeroSection'
 import StatsSection from './components/pages/LandingPage/StatusSection'
@@ -15,7 +16,8 @@ function App() {
       <WhatWeDo />
       <TripsGallery />
       <WhyChoose/>
-      {/* <StatsSection /> */}
+      <CapturedMemories />
+      <StatsSection />
       <CTABanner />
       <Footer />
     </div>
