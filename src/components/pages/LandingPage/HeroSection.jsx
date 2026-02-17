@@ -59,11 +59,8 @@ const HeroSection = () => {
         <div className="flex flex-col md:flex-row items-center w-full relative">
 
           {/* LEFT TEXT */}
-          <div className="w-full md:w-[55%] px-6 sm:px-8 md:px-20 pt-28 md:pt-0 flex flex-col gap-5 md:gap-6">
-            <span className="inline-flex items-center gap-2 text-amber-300 text-xs font-semibold tracking-widest uppercase">
-              <span className="w-6 h-px bg-amber-300 inline-block" />
-              Kerala's Group Travel Community
-            </span>
+          <div className="w-full md:w-[55%] px-6 sm:px-8 md:px-20 pt-36 md:pt-0 flex flex-col gap-5 md:gap-6">
+          
 
             <h1
               className="text-white font-bold leading-[1.15]"
@@ -95,21 +92,21 @@ const HeroSection = () => {
 
           {/* RIGHT CARDS */}
           {/* RIGHT CARDS */}
-<div
-  className="
-    w-full
-    md:absolute md:right-0
-    md:w-[45%]
-    mt-14 md:mt-0
-    md:top-[62%] lg:top-[68%]
-  "
-  style={{
-    maskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 85%, transparent 100%)',
-    WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 85%, transparent 100%)',
-  }}
-  onMouseEnter={() => (pausedRef.current = true)}
-  onMouseLeave={() => (pausedRef.current = false)}
->
+        <div
+          className="
+            w-full
+            md:absolute md:right-0
+            md:w-[45%]
+            mt-14 md:mt-0
+            md:top-[62%] lg:top-[68%]
+          "
+          style={{
+            maskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 85%, transparent 100%)',
+            WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 85%, transparent 100%)',
+          }}
+          onMouseEnter={() => (pausedRef.current = true)}
+          onMouseLeave={() => (pausedRef.current = false)}
+        >
 
             <div
               ref={trackRef}
